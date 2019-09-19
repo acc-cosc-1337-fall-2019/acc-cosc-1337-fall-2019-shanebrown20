@@ -10,3 +10,19 @@ returns 120
 
 DON'T FORGET TO WRITE TEST CASE.  See file loop_test.cpp
 */
+#include "loops.h"
+#include <iostream>
+int factorial(int num)
+{
+	int i = num;
+	int total = i;
+	while (i > 1)
+	{
+
+		total = total * (i - 1);
+
+		i--;
+
+	}
+	return total;
+}
