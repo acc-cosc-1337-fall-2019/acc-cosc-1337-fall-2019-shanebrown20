@@ -15,7 +15,7 @@ TEST_CASE("Test function val and ref parameters")
 {
 	int v = 5;
 	int r = 10;
-//	pass_by_val_and_ref(v, r);
+	pass_by_val_and_ref(v, r, 0);
 
 	REQUIRE(v == 5);
 	REQUIRE(r == 50);
