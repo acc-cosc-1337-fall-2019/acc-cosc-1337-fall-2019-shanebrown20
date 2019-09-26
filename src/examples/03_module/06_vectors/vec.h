@@ -29,4 +29,6 @@ void loop_vector_w_index_const(const std::vector<int>& nums);
 Iterate vector with a for ranged loop (use auto)
 */
 
-void loop_vector_w_for_ranged_(const std::vector<int>& nums);
+void loop_vector_w_for_ranged_(std::vector<int>& nums);
+
+void loop_vector_w_for_ranged_ref_var(std::vector<int>& nums);
