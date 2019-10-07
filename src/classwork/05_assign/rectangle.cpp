@@ -8,12 +8,12 @@ that calculates area of the rectangle.  The class has 3 int private variables ar
 */
 
 
-int Rectanglee::get_area()const
+int acc::Rectangle::get_area()const
 {
 	return area;
 }
 
-void Rectanglee::calculate_area()
+void acc::Rectangle::calculate_area()
 {
 	area = width * height;
 }
