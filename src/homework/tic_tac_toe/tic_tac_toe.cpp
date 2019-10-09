@@ -42,18 +42,22 @@ bool TicTacToe::check_row_win()
 	}
 }
 
-/*bool TicTacToe::check_diagonal_win()
+bool TicTacToe::check_diagonal_win()
 {
-	for (int i = 0; i < 3; i++)
+	if (pegs[0] == pegs[4] && pegs[0] == pegs[8] && pegs [0] != " ")
 	{
-		if (pegs[i] == pegs[i + 1] && pegs[i] == pegs[i + 2] && pegs[i] != " ")
-		{
-			return true;
-		}
-		else return false;
+		return true;
+	}
+	else if (pegs[2] == pegs[4] && pegs[2] == pegs[6] && pegs[0] != " ")
+	{
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
-*/ // need to fix diagonal checker
+ // need to fix diagonal checker
 void TicTacToe::clear_board()
 {
 	for (int i = 0; i <= 8; ++i)
