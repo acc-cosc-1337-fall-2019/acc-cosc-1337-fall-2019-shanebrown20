@@ -8,11 +8,11 @@ void TicTacToe::set_next_player()
 {
 	if (next_player == "X")
 	{
-		next_player == "O";
+		next_player = "O";
 	}
 	else
 	{
-		next_player == "X";
+		next_player = "X";
 	}
 }
 
@@ -25,21 +25,23 @@ bool TicTacToe::check_column_win()
 		{
 			return true;
 		}
-		else return false;
+		
 	}
-	
+
+	return false;
 }
 
 bool TicTacToe::check_row_win()
 {
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i <= 6; i += 3)
 	{
 		if (pegs[i] == pegs[i + 1] && pegs[i] == pegs[i + 2] && pegs[i] != " ")
 		{
 			return true;
 		}
-		else return false;
 	}
+		return false;
+	
 }
 
 bool TicTacToe::check_diagonal_win()
@@ -48,7 +50,7 @@ bool TicTacToe::check_diagonal_win()
 	{
 		return true;
 	}
-	else if (pegs[2] == pegs[4] && pegs[2] == pegs[6] && pegs[0] != " ")
+	else if (pegs[2] == pegs[4] && pegs[2] == pegs[6] && pegs[2] != " ")
 	{
 		return true;
 	}
@@ -57,7 +59,7 @@ bool TicTacToe::check_diagonal_win()
 		return false;
 	}
 }
- // need to fix diagonal checker
+ 
 void TicTacToe::clear_board()
 {
 	for (int i = 0; i <= 8; ++i)
@@ -74,16 +76,14 @@ bool TicTacToe::check_board_full()
 		{
 			return false;
 		}
-		else
-		{
-			return true;
-		}
+		
 	}
+	return true;
 	
 }
 bool TicTacToe::game_over()
 {
-	if (check_column_win() == true || check_row_win() == true || check_diagonal_win() == true)
+	if (check_column_win() || check_row_win() || check_diagonal_win() || check_board_full())
 	{
 		return true;
 	}
@@ -99,7 +99,7 @@ void TicTacToe::start_game(string player)
 }
 void TicTacToe::mark_board(int position)
 {
-	pegs[position -1] == next_player;
+	pegs[position -1] = next_player;
 	set_next_player();
 }
 string TicTacToe::get_player()const
@@ -113,7 +113,7 @@ void TicTacToe::display_board()const
 	{
 		for (int i = 1; i <= 3; i++)
 		{
-			cout << pegs[space];
+			cout << pegs[space] << "|";
 			space++;
 		}
 		cout << "\n";
