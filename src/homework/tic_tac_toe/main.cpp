@@ -14,7 +14,7 @@ int main()
 		cout << "Choose X or O for player one: \n";
 		cin >> player;
 		board.start_game(player);
-		for (int turn = 0; turn < 9; turn++)
+		while(!board.game_over())
 		{
 			cout << "Enter position 1-9 for " << board.get_player() << " ";
 			cin >> position;
