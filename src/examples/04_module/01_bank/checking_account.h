@@ -4,7 +4,8 @@
 class CheckingAccount : public BankAccount
 {
 public:
-	int get_balance() const;
+	CheckingAccount(int bal) : BankAccount(bal) {}
+	int get_balance() const; 
 private:
 
 };
