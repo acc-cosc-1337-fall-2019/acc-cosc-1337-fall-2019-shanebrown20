@@ -120,3 +120,18 @@ void TicTacToe::display_board()const
 	}
 }
 
+std::ostream & operator<<(std::ostream & out, const TicTacToe & board)
+{
+	board.display_board();
+	return out;
+}
+
+std::istream & operator>>(std::istream & in, TicTacToe & board)
+{
+	int position;
+	cout << "Enter position 1-9 for " << board.get_player() << " ";
+	in >> position;
+	board.mark_board(position);
+	return in;
+	
+}

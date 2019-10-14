@@ -16,13 +16,12 @@ int main()
 		board.start_game(player);
 		while(!board.game_over())
 		{
-			cout << "Enter position 1-9 for " << board.get_player() << " ";
-			cin >> position;
-			board.mark_board(position);
-			board.display_board();
+			
+			cin >> board;
+			cout << board;
 			if (board.game_over() == true)
 			{
-				cout << "Player " << board.get_player() << " is the winner!";
+				cout << "Winner!\n";
 				break;
 			}
 

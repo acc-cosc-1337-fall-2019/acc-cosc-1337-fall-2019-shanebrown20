@@ -12,6 +12,9 @@ public:
 	void mark_board(int position);
 	string get_player() const;
 	void display_board()const;
+	friend std::ostream & operator << (std::ostream & out,
+		const TicTacToe & b);
+	friend std::istream & operator >> (std::istream & in, TicTacToe & b);
 
 private:
 	void set_next_player();
