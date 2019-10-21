@@ -10,17 +10,14 @@ using std::cout; using std::vector; using std::cin;
 
 int main()
 {
-	CheckingAccount a(1500);
-	cout << a;
-	
-	SavingsAccount savings(500);
-	cout << savings;
-	cout << "\n" << savings.get_balance() << "\n";
-	savings.add_interest();
-	cout << savings;
+	CheckingAccount checking(1500);
+	cout << "\n" << checking.get_balance() << "\n";
 
-	BankAccount c = a + savings;
-	cout << c;
+	SavingsAccount savings(500);
+	cout << "\n" << savings.get_balance() << "\n";
+
+	BankAccount& account = savings;
+	cout << "\nRef to savings get_balance: " << account.get_balance() << "\n";
 
 	return 0;
 }
