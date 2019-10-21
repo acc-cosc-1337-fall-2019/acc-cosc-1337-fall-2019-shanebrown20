@@ -5,19 +5,21 @@
 #include "customer.h"
 #include "checking_account.h"
 #include "savings_account.h"
-using std::cout; using std::vector; using std::cin;
+#include <functional>
 
+using std::cout; using std::vector; using std::cin;
+using std::reference_wrapper;
 
 int main()
 {
-	CheckingAccount checking(1500);
-	cout << "\n" << checking.get_balance() << "\n";
+	CheckingAccount c(1500);
+	SavingsAccount s(500);
+	vector<reference_wrapper<BankAccount>> accounts{ c,s};
 
-	SavingsAccount savings(500);
-	cout << "\n" << savings.get_balance() << "\n";
-
-	BankAccount& account = savings;
-	cout << "\nRef to savings get_balance: " << account.get_balance() << "\n";
+	for (auto act : accounts)
+	{
+		cout << "Balance: " << act.get().get_balance() << "\n";
+	}
 
 	return 0;
 }
