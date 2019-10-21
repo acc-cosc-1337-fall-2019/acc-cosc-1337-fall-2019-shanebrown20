@@ -106,23 +106,19 @@ string TicTacToe::get_player()const
 {
 	return next_player;
 }
-void TicTacToe::display_board()const
+
+std::ostream & operator<<(std::ostream & out, const TicTacToe & board)
 {
 	int space = 0;
 	for (int row = 1; row <= 3; row++)
 	{
 		for (int i = 1; i <= 3; i++)
 		{
-			cout << pegs[space] << "|";
+			out << board.pegs[space] << "|";
 			space++;
 		}
-		cout << "\n";
+		out << "\n";
 	}
-}
-
-std::ostream & operator<<(std::ostream & out, const TicTacToe & board)
-{
-	board.display_board();
 	return out;
 }
 
