@@ -128,7 +128,7 @@ TEST_CASE("Test win by third row")
 TEST_CASE("Test win by diagonal top left")
 {
 	TicTacToe board;
-	board.start_game("X");
+	board.start_game("O");
 	REQUIRE(board.game_over() == false);
 	board.mark_board(1);//X         
 	REQUIRE(board.game_over() == false);
@@ -141,6 +141,7 @@ TEST_CASE("Test win by diagonal top left")
 	board.mark_board(9);//X 
 	//X wins 
 	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "O");
 }
 TEST_CASE("Test win by diagonal bottom left")
 {
@@ -158,6 +159,7 @@ TEST_CASE("Test win by diagonal bottom left")
 	board.mark_board(3);//X 
 	//X wins 
 	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
 }
 TEST_CASE("Test for no winner")
 {
@@ -176,4 +178,6 @@ TEST_CASE("Test for no winner")
 
 	//no one wins 
 	REQUIRE(board.game_over() == true);
+
+	REQUIRE(board.get_winner() == "C");
 }
