@@ -35,7 +35,7 @@ int main()
 	//Shape instance using Smart Pointer
 	std::unique_ptr<Shape> l = std::make_unique<Line>();
 	l->draw();
-
+	
 	//vector of Shape instances using Smart Pointers
 	std::vector <std::unique_ptr < Shape >> shaps;
 	shaps.push_back(std::make_unique< Line >());
@@ -46,5 +46,17 @@ int main()
 		shape->draw();
 	}
 
+	std::unique_ptr < Shape > line2 = std::make_unique< Line >();
+	line2->draw();
+
+	std::vector <std::unique_ptr < Shape >> shapes2;
+	shapes2.push_back(std::make_unique< Line >());
+	shapes2.push_back(std::make_unique< Circle >());
+
+	for (auto & shape : shapes)
+	{
+		shape->draw();
+	}
+	
 	return 0;
 }
