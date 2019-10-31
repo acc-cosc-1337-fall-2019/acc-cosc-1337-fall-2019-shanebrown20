@@ -5,6 +5,6 @@
 class Circle : public Shape
 {
 public:
-	void draw() { std::cout << "Draw circle"; }
+	void draw() override;
 };
 #endif // !CIRCLE_H
