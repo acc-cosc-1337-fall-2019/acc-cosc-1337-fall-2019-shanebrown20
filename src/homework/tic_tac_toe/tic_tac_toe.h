@@ -12,7 +12,7 @@ class TicTacToe
 {
 public:
 	TicTacToe() {};
-	TicTacToe(int size) : pegs(size * size, " ") {};
+	TicTacToe(int size);
 	bool game_over();
 	void start_game(string player);
 	void mark_board(int position);
@@ -21,7 +21,7 @@ public:
 	friend std::ostream & operator << (std::ostream & out,
 		const TicTacToe & b);
 	friend std::istream & operator >> (std::istream & in, TicTacToe & b);
-
+	int board_size;
 protected:
 	vector<string> pegs;
 	virtual bool check_column_win();
@@ -30,7 +30,6 @@ protected:
 
 private:
 	void set_next_player();
-	
 	void clear_board();
 	bool check_board_full();
 	void set_winner();

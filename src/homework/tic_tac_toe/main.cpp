@@ -39,7 +39,7 @@ int main()
 			cout << *board;
 			if (board->game_over() == true)
 			{
-				cout << "Game over";
+				cout << "Game over\n";
 				break;
 			}
 

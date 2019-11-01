@@ -12,5 +12,6 @@ private:
 	bool check_column_win() override;
 	bool check_row_win() override;
 	bool check_diagonal_win() override;
+	int grid_size = 3;
 };
 #endif // !TIC_TAC_TOE_3
