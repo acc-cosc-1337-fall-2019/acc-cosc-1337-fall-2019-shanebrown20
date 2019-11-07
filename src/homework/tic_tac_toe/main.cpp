@@ -9,22 +9,22 @@ int main()
 {
 	string player;
 	int position;
-	TicTacToeManager manager;
+	unique_ptr<TicTacToeManager> manager = std::make_unique<TicTacToeManager>();
 	int game_type;
 
 	auto user_choice = 'y';
 	do {
 		cout << "Play win by 3 or 4: ";
 		cin >> game_type;
-		TicTacToe* board;
+		unique_ptr<TicTacToe> board;
 
 		if (game_type == 3)
 		{
-			board = new TicTacToe3();
+			board = std::make_unique<TicTacToe3>();
 		}
 		else
 		{
-			board = new TicTacToe4();
+			board = std::make_unique<TicTacToe4>();
 		}
 		
 		cout << "Choose X or O for player one: \n";
@@ -44,7 +44,7 @@ int main()
 			}
 
 		}
-		manager.save_game(*board);
+		manager->save_game(board);
 
 		cout << "Would you like to play again? Y or N: \n";
 		cin >> user_choice;
