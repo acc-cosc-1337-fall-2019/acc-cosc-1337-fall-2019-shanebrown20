@@ -51,6 +51,6 @@ int main()
 	} while (user_choice == 'y' || user_choice == 'Y');
 
 	cout << "History: \n";
-	cout << manager;
+	cout << *manager;
 	return 0;
 }
