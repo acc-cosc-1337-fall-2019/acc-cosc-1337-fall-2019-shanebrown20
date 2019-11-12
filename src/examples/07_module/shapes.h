@@ -3,7 +3,7 @@
 #define SHAPE_H
 #include <iostream>
 using std::cout;
-class Shape
+class Shapes
 {
 public:
 	virtual void draw() = 0; // pure virtual function, makes shape an abstract class
