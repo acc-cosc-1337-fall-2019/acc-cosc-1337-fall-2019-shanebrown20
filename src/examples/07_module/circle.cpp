@@ -1,6 +1,8 @@
+#include "../07_module/circle.h"
+
 //circle.cpp
-#include "circle.h"
-void Circle::draw()
+
+void mod7ex::Circle::draw()
 {
-	cout << "Draw Circle\n";
+	std::cout << "Draw circle";
 }
